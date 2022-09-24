@@ -32,7 +32,27 @@ public class Empresa {
 
     public void aumentaSalárioFuncionários (float porcentagem) {
         for (Departamento d : departamentos) {
-            d.
+            d.aumentaSalarioFuncionarios(porcentagem);
         }
+    }
+
+    public float getSalarioTotalDaEmpresa () {
+        float valor=0.0f;
+        for (Departamento d : departamentos) {
+            valor+=d.getSalarioTotalDoDepartamento();
+        }
+        return valor;
+    }
+
+    public float getMediaSalarialDaEmpresa () {
+        int i=0;
+        float valor=0;
+        for (Departamento d : departamentos) {
+            for (Funcionarios f : d.getFuncionarios()) {
+                valor+=f.getSalario();
+                i++;
+            }
+        }
+        return valor/i;
     }
 }

@@ -2,11 +2,11 @@ import java.util.LinkedList;
 
 public class Departamento {
     private String nome;
-    private LinkedList<Funcionários> funcionários;
+    private LinkedList<Funcionarios> funcionarios;
 
     public Departamento (String nome) {
         this.nome = nome;
-        this.funcionários = new LinkedList<Funcionários>();
+        this.funcionarios = new LinkedList<Funcionarios>();
     }
     public Departamento() {}
 
@@ -16,24 +16,36 @@ public class Departamento {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public LinkedList<Funcionários> getFuncionários() {
-        return funcionários;
+    public LinkedList<Funcionarios> getFuncionarios() {
+        return funcionarios;
     }
-    public void setFuncionários(LinkedList<Funcionários> funcionários) {
-        this.funcionários = funcionários;
-    }
-
-    public void insereFuncionario(Funcionários funcionário) {
-        this.funcionários.addLast(funcionário);
-    }
-    public void removeFuncionário(Funcionários funcionário) {
-        this.funcionários.remove(funcionário);
+    public void setFuncionarios(LinkedList<Funcionarios> funcionarios) {
+        this.funcionarios = funcionarios;
     }
 
-    public void aumentaSalárioFuncionários (float porcentagem) {
-        for (Funcionários f : funcionários) {
-            f.setSalário(f.getSalário()+f.getSalário()/100.0f);;
+    public void insereFuncionario(Funcionarios funcionario) {
+        this.funcionarios.addLast(funcionario);
+    }
+    public void removeFuncionario(Funcionarios funcionario) {
+        this.funcionarios.remove(funcionario);
+    }
+
+    public void aumentaSalarioFuncionarios (float porcentagem) {
+        for (Funcionarios f : funcionarios) {
+            f.aumentaSalario(porcentagem);
         }
     }
-}
 
+    public float getSalarioTotalDoDepartamento () {
+        float valor=0.0f;
+        for (Funcionarios f : funcionarios) {
+            valor+=f.getSalario();
+        }
+        return valor;
+    }
+
+    public float getSalarioMedioDoDepartamento () {
+        float valor=getSalarioTotalDoDepartamento();
+        return valor/funcionarios.size();
+    }
+}
