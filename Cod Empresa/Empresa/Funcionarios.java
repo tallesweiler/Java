@@ -1,4 +1,3 @@
-
 public class Funcionarios {
   private String nome;
   private float salario;
@@ -31,6 +30,6 @@ public class Funcionarios {
   }
 
   public void aumentaSalario(float porcentagem) {
-    salario=salario*(1+porcentagem/100.0f);
+    salario=salario*(1+porcentagem/100);
   }
 }

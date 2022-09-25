@@ -37,7 +37,7 @@ public class Empresa {
     }
 
     public float getSalarioTotalDaEmpresa () {
-        float valor=0.0f;
+        float valor=0;
         for (Departamento d : departamentos) {
             valor+=d.getSalarioTotalDoDepartamento();
         }
