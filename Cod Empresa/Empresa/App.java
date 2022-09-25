@@ -1,4 +1,20 @@
 public class App {
+    public static void imprimeSalarioMedioETotal(Empresa empresa) {
+        System.out.printf("O salario total da empresa eh de R$%.2f\n", empresa.getSalarioTotalDaEmpresa());
+        System.out.printf("A media salarial da empresa eh de R$%.2f\n\n", empresa.getMediaSalarialDaEmpresa());
+    }
+
+    public static void imprimeInformacoesDaEmpresa(Empresa empresa) {
+        System.out.println("\nEmpresa: " + empresa.getNome() + "\n");
+        for (Departamento d : empresa.getDepartamentos()) {
+            System.out.println("Departamento: " + d.getNome());
+            for (Funcionarios f : d.getFuncionarios()) {
+                System.out.printf("Funcionario %03d: %s (R$%.2f)\n", f.getId(), f.getNome(), f.getSalario());
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
 
     Empresa positivo = new Empresa("Positivo");
@@ -27,23 +43,13 @@ public class App {
     positivo.insereDepartamento(ti);
     positivo.insereDepartamento(diretor);
 
-    System.out.println("\nEmpresa: " + positivo.getNome() + "\n");
-    for (Departamento d : positivo.getDepartamentos()) {
-        System.out.println("Departamento: " + d.getNome());
-        for (Funcionarios f : d.getFuncionarios()) {
-            System.out.printf("Funcionario %03d: %s (R$%.2f)\n", f.getId(), f.getNome(), f.getSalario());
-        }
-        System.out.println();
-    }
+    imprimeInformacoesDaEmpresa(positivo);
 
-    System.out.printf("O salario total da empresa eh de R$%.2f\n", positivo.getSalarioTotalDaEmpresa());
-    System.out.printf("A media salarial da empresa eh de R$%.2f\n\n", positivo.getMediaSalarialDaEmpresa());
+    imprimeSalarioMedioETotal(positivo);
     
     positivo.aumentaSalárioFuncionários(10);
     diretor.removeFuncionario(talles);
 
-    System.out.printf("O salario total da empresa eh de R$%.2f\n", positivo.getSalarioTotalDaEmpresa());
-    System.out.printf("A media salarial da empresa eh de R$%.2f\n\n", positivo.getMediaSalarialDaEmpresa());
-
+    imprimeSalarioMedioETotal(positivo);
     }
 }
