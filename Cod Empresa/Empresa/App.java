@@ -9,7 +9,7 @@ public class App {
             System.out.println();
         }
     }
-//
+
     public static void imprimeSalarioMedioETotal(Empresa empresa) {
         System.out.printf("O salario total da empresa eh de R$%.2f\n", empresa.getSalarioTotalDaEmpresa());
         System.out.printf("A media salarial da empresa eh de R$%.2f\n\n", empresa.getMediaSalarialDaEmpresa());
