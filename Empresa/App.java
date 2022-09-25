@@ -1,6 +1,6 @@
 public class App {
     public static void main(String[] args) {
-
+//teste
     Empresa positivo = new Empresa("Positivo");
 
     Departamento rh       = new Departamento("Recursos humanos");
