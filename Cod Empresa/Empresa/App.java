@@ -17,7 +17,7 @@ public class App {
 
     public static void main(String[] args) {
         Empresa positivo = new Empresa("Positivo");
-//aaaaa
+
         Departamento rh       = new Departamento("Recursos humanos");
         Departamento vendas   = new Departamento("Vendas");
         Departamento ti       = new Departamento("Tecnologia da Informação");
