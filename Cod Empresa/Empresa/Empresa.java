@@ -48,7 +48,7 @@ public class Empresa {
         int i=0;
         float valor=0;
         for (Departamento d : departamentos) {
-            for (Funcionarios f : d.getFuncionarios()) {
+            for (Funcionario f : d.getFuncionarios()) {
                 valor+=f.getSalario();
                 i++;
             }

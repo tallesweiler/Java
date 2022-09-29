@@ -3,8 +3,9 @@ public class App {
         System.out.println("\nEmpresa: " + empresa.getNome() + "\n");
         for (Departamento d : empresa.getDepartamentos()) {
             System.out.println("Departamento: " + d.getNome());
-            for (Funcionarios f : d.getFuncionarios()) {
-                System.out.printf("Funcionario %03d: %s (R$%.2f)\n", f.getId(), f.getNome(), f.getSalario());
+            for (Funcionario f : d.getFuncionarios()) {
+                //System.out.printf("Funcionario %03d: %s (R$%.2f)\n", f.getId(), f.getNome(), f.getSalario());
+                System.out.println(f.toString());
             }
             System.out.println();
         }
@@ -23,12 +24,12 @@ public class App {
         Departamento ti       = new Departamento("Tecnologia da Informação");
         Departamento diretor  = new Departamento("Diretoria");
 
-        Funcionarios joão     = new Funcionarios("João Victor", 1212.53f, 1);
-        Funcionarios talles   = new Funcionarios("Talles Cavalleiro", 5000f, 2);
-        Funcionarios celso    = new Funcionarios("Celso Nantes", 400f, 3);
-        Funcionarios bruno    = new Funcionarios("Bruno Santos", 15003f, 4);
-        Funcionarios thiago   = new Funcionarios("Thiago Lahass", 400f, 5);
-        Funcionarios gatti    = new Funcionarios("Gabriel Gatti", 400f, 6);
+        Funcionario joão     = new FuncionarioTempoIntegral("João Victor", 1212.53f, 1, 40);
+        Funcionario talles   = new FuncionarioTempoIntegral("Talles Cavalleiro", 5000f, 2, 40);
+        Funcionario celso    = new FuncionarioTempoIntegral("Celso Nantes", 400f, 3);
+        Funcionario bruno    = new FuncionarioTempoParcial("Bruno Santos", 15003f, 4);
+        Funcionario thiago   = new FuncionarioTempoParcial("Thiago Lahass", 400f, 5);
+        Funcionario gatti    = new FuncionarioTempoParcial("Gabriel Gatti", 400f, 6);
 
         rh.insereFuncionario(celso);
         ti.insereFuncionario(joão);
