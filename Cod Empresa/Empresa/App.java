@@ -5,7 +5,7 @@ public class App {
             System.out.println("Departamento: " + d.getNome());
             for (Funcionario f : d.getFuncionarios()) {
                 //System.out.printf("Funcionario %03d: %s (R$%.2f)\n", f.getId(), f.getNome(), f.getSalario());
-                System.out.println(f.toString());
+                System.out.println(f);
             }
             System.out.println();
         }
