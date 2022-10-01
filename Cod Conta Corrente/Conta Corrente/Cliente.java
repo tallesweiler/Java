@@ -34,6 +34,6 @@ public class Cliente {
         }
     }
     public void consultaSaldo() {
-        System.out.printf("\nCliente: %s\nSaldo atual: R$%.2f\n\n", getNome(), getSaldo());
+        System.out.printf("Cliente: %s\nSaldo atual: R$%.2f\n\n", getNome(), getSaldo());
     }
 }
