@@ -29,7 +29,7 @@ public class Cliente {
     }
 
     public void consultaSaldo() {
-        System.out.printf("Cliente: %s\nSaldo atual: R$%.2d", getNome(), getSaldo());
+        System.out.println("Cliente: " + getNome() + "\nSaldo atual: R$" + getSaldo());
     }
     public void deposito(double valor) {
         saldo+=valor;
