@@ -22,6 +22,7 @@ public class Cliente {
 
     public void deposito(double valor) {
         saldo+=valor;
+        System.out.println("Deposito realizado com sucesso!");
     }
     public void saque(double valor) {
         if((valor+valor*0.05)<getSaldo()) {
@@ -33,6 +34,6 @@ public class Cliente {
         }
     }
     public void consultaSaldo() {
-        System.out.printf("\nCliente: %s\nSaldo atual: R$%.2f\n", getNome(), getSaldo());
+        System.out.printf("\nCliente: %s\nSaldo atual: R$%.2f\n\n", getNome(), getSaldo());
     }
 }
