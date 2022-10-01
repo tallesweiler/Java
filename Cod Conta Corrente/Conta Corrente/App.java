@@ -1,11 +1,11 @@
 public class App {
     public static void main(String[] args) {
-        Cliente talles = new ClienteEspecial("talles", 1234);
+        Cliente talles = new ClienteEspecial("talles");
 
         talles.deposito(1000);
 
         talles.consultaSaldo();
-        talles.saque(100);
+        talles.saque(990);
         talles.consultaSaldo();
     }
 }
