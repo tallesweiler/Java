@@ -37,7 +37,7 @@ public class Cliente {
 
     @Override
     public void saque(double valor) {
-        if((valor+valor*0.05)<getSaldo()) {
+        if((valor+valor*0.05)<saldo) {
             saldo-=(valor+valor*0.05);
             System.out.println("Saque realizado com sucesso!");
         }
