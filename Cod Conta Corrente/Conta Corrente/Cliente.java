@@ -26,7 +26,7 @@ public class Cliente {
     }
     public void saque(double valor) {
         if((valor+valor*0.05)<getSaldo()) {
-            saldo-=(valor+valor*0.05);
+            setSaldo(getSaldo()-(valor+valor*0.05));
             System.out.println("Saque realizado com sucesso!");
         }
         else {
