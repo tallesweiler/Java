@@ -5,5 +5,7 @@ public class App {
         talles.deposito(1000);
 
         talles.consultaSaldo();
+        talles.saque(100);
+        talles.consultaSaldo();
     }
 }
