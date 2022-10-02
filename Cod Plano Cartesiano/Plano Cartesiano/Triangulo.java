@@ -30,10 +30,8 @@ public class Triangulo {
         return tamanhoLado(p1, p2)+tamanhoLado(p1, p3)+tamanhoLado(p2, p3);
     }
     public double tamanhoLado(PontoCartesiano p1, PontoCartesiano p2) {
-        double x, y;
-        
-        x=p2.getX()-p1.getX();
-        y=p2.getY()-p1.getY();
+        double x=p2.getX()-p1.getX();
+        double y=p2.getY()-p1.getY();
         
         return Math.sqrt(x*x+y*y);
     }
