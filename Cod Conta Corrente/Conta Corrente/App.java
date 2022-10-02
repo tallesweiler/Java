@@ -2,7 +2,7 @@ public class App {
     public static void consultaClientes(Banco b) {
         System.out.println();
         for (Cliente c : b.getClientes()) {
-            c.consultaSaldo();
+            System.out.println(c);
         }
     }
     public static void main(String[] args) {

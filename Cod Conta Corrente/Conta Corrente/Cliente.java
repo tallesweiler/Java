@@ -33,7 +33,7 @@ public class Cliente {
             System.out.println("Saldo insuficiente!");
         }
     }
-    public void consultaSaldo() {
-        System.out.printf("Cliente: %s\nSaldo atual: R$%.2f\n\n", getNome(), getSaldo());
+    public String toString() {
+        return String.format("Cliente: %s\nSaldo: R$%.2f\n", getNome(), getSaldo());
     }
 }
