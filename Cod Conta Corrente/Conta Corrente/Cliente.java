@@ -19,14 +19,17 @@ public class Cliente {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+    public double getTaxa(){
+        return 0.05;
+    }
 
     public void deposito(double valor) {
         saldo+=valor;
         System.out.println("Deposito realizado com sucesso!");
     }
     public void saque(double valor) {
-        if((valor+valor*0.05)<getSaldo()) {
-            setSaldo(getSaldo()-(valor+valor*0.05));
+        if((valor+valor*getTaxa())<getSaldo()) {
+            setSaldo(getSaldo()-(valor+valor*getTaxa()));
             System.out.println("Saque realizado com sucesso!");
         }
         else {
