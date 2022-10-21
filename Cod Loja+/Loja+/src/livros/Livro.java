@@ -32,6 +32,6 @@ public class Livro {
     }
 
     public String toString() {
-        return (titulo + " (" + nomeDoAutor + ") " + anoDePublicaçao);
+        return (titulo + " (" + nomeDoAutor + " - " + anoDePublicaçao + ")");
     }
 }
