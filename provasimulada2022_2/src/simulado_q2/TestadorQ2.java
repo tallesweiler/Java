@@ -1,5 +1,7 @@
 package simulado_q2;
 
+import java.util.Random;
+
 /**
  * Questão 2. Crie uma classe para representar personagens "Pokemón". 
  * 
@@ -53,6 +55,56 @@ interface PersonagemDeLuta<T>
 	public boolean atacar(T personagemAtacado);
 	public void regenera();
 	public int getPontosVitalidade();
+}
+
+class Pokemon implements PersonagemDeLuta<Pokemon>{
+    private int PontosVitalidade;
+	private int DanoMax;
+    private int DanoMin;
+    private int VidaInicial;
+    
+	public void setPontosVitalidade(int pontosVitalidade) {
+		PontosVitalidade = pontosVitalidade;
+	}
+    public int getDanoMax() {
+		return DanoMax;
+	}
+	public int getDanoMin() {
+		return DanoMin;
+	}
+	public int getVidaInicial() {
+		return VidaInicial;
+	}
+
+	public Pokemon(int vidaInicial, int danoMin, int danoMax) {
+        VidaInicial = vidaInicial;
+        PontosVitalidade = vidaInicial;
+        DanoMax = danoMax;
+        DanoMin = danoMin;
+    }
+
+    @Override
+    public boolean atacar(Pokemon personagemAtacado) {
+        Random r = new Random();
+        if (r.nextBoolean()) {
+            personagemAtacado.setPontosVitalidade(personagemAtacado.getPontosVitalidade()-this.getDanoMax());
+        }
+        else {
+            personagemAtacado.setPontosVitalidade(personagemAtacado.getPontosVitalidade()-this.getDanoMin());
+		}
+
+        if (personagemAtacado.getPontosVitalidade()<=0) {
+            personagemAtacado.setPontosVitalidade(0);
+            return true;
+        } 
+        return false;
+    }
+	public void regenera() {
+        this.PontosVitalidade=this.VidaInicial;
+    }
+	public int getPontosVitalidade() {
+		return this.PontosVitalidade;
+	}
 }
 
 /**
